@@ -1,6 +1,22 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { Layout } from '@/components/layout';
+import { createTheme } from '@/theme';
+import { createEmotionCache } from '@/utils/emotionCache';
+import { CacheProvider } from '@emotion/react';
+import { ThemeProvider } from '@mui/material';
+import type { AppProps } from 'next/app';
+import '@/styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+	const theme = createTheme();
+	const emotionCache = createEmotionCache();
+
+	return (
+		<CacheProvider value={emotionCache}>
+			<ThemeProvider theme={theme}>
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
+			</ThemeProvider>
+		</CacheProvider>
+	);
 }
