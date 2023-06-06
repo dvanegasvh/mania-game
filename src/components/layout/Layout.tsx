@@ -1,12 +1,20 @@
-import { ILayoutProps } from './models/LayoutProps';
+import { useState } from 'react';
 import { Sidebar } from '@/components/sidebar';
+import { ILayoutProps } from './models/LayoutProps';
+
+import { NavMenu } from '../sidebar/components/nav-menu';
 import { LayoutContainer, LayoutRoot } from './styles';
 
 export const Layout: React.FC<ILayoutProps> = ({ children }) => {
+	const [openMenu, setOpenMenu] = useState<boolean>(false);
+
 	return (
-		<LayoutRoot>
-			<Sidebar />
-			<LayoutContainer>{children}</LayoutContainer>
-		</LayoutRoot>
+		<>
+			<NavMenu onNavOpen={(): void => setOpenMenu(!openMenu)} />
+			<Sidebar openMenu={openMenu} onNavOpen={(): void => setOpenMenu(!openMenu)} />
+			<LayoutRoot>
+				<LayoutContainer>{children}</LayoutContainer>
+			</LayoutRoot>
+		</>
 	);
 };
