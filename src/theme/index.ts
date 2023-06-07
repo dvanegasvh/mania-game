@@ -1,4 +1,5 @@
 import { createTheme as createMuiTheme, ThemeOptions } from '@mui/material';
+
 import { createComponents } from './create-components';
 import { createPalette } from './create-palette';
 import { createShadows } from './create-shadows';
@@ -17,7 +18,7 @@ export const createTheme = (): ThemeOptions => {
 				sm: 600,
 				md: 900,
 				lg: 1200,
-				xl: 1440,
+				xl: 1920,
 			},
 		},
 		components,
