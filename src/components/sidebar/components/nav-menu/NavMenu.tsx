@@ -23,6 +23,7 @@ export const NavMenu: React.FC<INavMenuProps> = ({ onNavOpen }) => {
 						lg: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
 					},
 					zIndex: theme => theme.zIndex.appBar,
+					boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);',
 				}}
 			>
 				<Stack

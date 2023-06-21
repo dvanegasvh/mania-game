@@ -3,7 +3,7 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 import OutboundIcon from '@mui/icons-material/Outbound';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import { ICONS_SIZE } from '@/constants/IconsSize';
-import { IRoutes, ROUTE_NAMES } from '@/models/Routes';
+import { IRoutes, ROUTE_NAMES, SUB_ROUTES } from '@/models/Routes';
 
 /**
  * This const is used to define the routes of the application.
@@ -44,11 +44,11 @@ export const ROUTES: IRoutes = {
 		isCollapse: true,
 		subItems: [
 			{
-				path: '/income/create',
+				path: SUB_ROUTES['INCOME_CREATE'],
 				title: 'Crear venta',
 			},
 			{
-				path: '/income/report',
+				path: SUB_ROUTES['INCOME_REPORT'],
 				title: 'Reporte de ingresos',
 			},
 		],
@@ -61,11 +61,11 @@ export const ROUTES: IRoutes = {
 		isCollapse: true,
 		subItems: [
 			{
-				path: '/bills/create',
+				path: SUB_ROUTES['BILLS_CREATE'],
 				title: 'Crear gasto',
 			},
 			{
-				path: '/bills/report',
+				path: SUB_ROUTES['BILLS_REPORT'],
 				title: 'Reporte de gastos',
 			},
 		],

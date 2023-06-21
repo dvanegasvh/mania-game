@@ -1,1 +1,1 @@
-export type IconName = 'logo';
+export type IconName = 'logo' | 'balance' | 'dollar';
