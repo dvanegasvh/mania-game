@@ -13,6 +13,16 @@ export enum ROUTE_NAMES {
 }
 
 /**
+ * This enum is used to define the names of the sub routes of the application.
+ */
+export enum SUB_ROUTES {
+	INCOME_CREATE = '/income/create',
+	INCOME_REPORT = '/income/report',
+	BILLS_CREATE = '/bills/create',
+	BILLS_REPORT = '/bills/report',
+}
+
+/**
  * This interface is used to define the routes structure.
  *
  * @interface IRoute

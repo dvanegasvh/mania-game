@@ -1,12 +1,5 @@
-import { Inter } from 'next/font/google';
-import { Box } from '@mui/material';
-
-const inter = Inter({ subsets: ['latin'] });
+import Movements from '@/components/movements/Movements';
 
 export default function Home() {
-	return (
-		<main>
-			<Box>Main page</Box>
-		</main>
-	);
+	return <Movements />;
 }
