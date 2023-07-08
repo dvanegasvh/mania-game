@@ -8,7 +8,7 @@ export const TitleSection: React.FC<ITitleSectionProps> = ({ children, title }) 
 				<Stack spacing={1}>
 					<Typography variant="h4">{title}</Typography>
 				</Stack>
-				<Stack direction="row" spacing={2} justifyContent={{ xs: 'center', lg: 'initial' }}>
+				<Stack direction={{ lg: 'row', xs: 'column' }} spacing={2} justifyContent={{ xs: 'center', lg: 'initial' }}>
 					{children}
 				</Stack>
 			</Stack>
