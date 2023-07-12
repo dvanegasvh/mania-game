@@ -1,5 +1,6 @@
 import { common } from '@mui/material/colors';
 import { alpha } from '@mui/material/styles';
+
 import { error, indigo, info, neutral, success, warning } from './colors';
 
 export const createPalette = (): { [key: string]: object | string } => {

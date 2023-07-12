@@ -27,10 +27,6 @@ export const ROUTES: IRoutes = {
 				title: 'Items de venta',
 			},
 			{
-				path: '/inventory-value',
-				title: 'Valor del inventario',
-			},
-			{
 				path: '/categories',
 				title: 'Categorías',
 			},

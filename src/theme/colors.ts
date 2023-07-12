@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { alpha } from '@mui/material/styles';
 
 const withAlphas = (color: { [key: string]: string }): Object => {
