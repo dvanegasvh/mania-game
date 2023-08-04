@@ -12,6 +12,15 @@ export enum ROUTE_NAMES {
 	CONTACTS,
 }
 
+export enum SUB_ROUTES_NAMES {
+	INCOME_CREATE,
+	INCOME_REPORT,
+	BILLS_CREATE,
+	BILLS_REPORT,
+	CATEGORIES,
+	PRODUCTS,
+}
+
 /**
  * This enum is used to define the names of the sub routes of the application.
  */

@@ -1,18 +1,21 @@
 import AllInboxIcon from '@mui/icons-material/AllInbox';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
-import { Avatar, Button, Card, CardContent, InputAdornment, OutlinedInput, Stack, TextField, Typography } from '@mui/material';
+import { Button, InputAdornment, OutlinedInput, Stack, TextField } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import { CardDescription } from '@/components/card-description';
-import { Icon } from '@/components/icon';
+import { CardInformation } from '@/components/card-information';
 import { Main } from '@/components/main';
 import { TitleSection } from '@/components/title-section';
+import { SUB_ROUTES_NAMES } from '@/models/Routes';
 import { Scrollbar } from '@/styles/scrollbar/Scrollbar';
+import { getSubRouteTitle } from '@/utils/routes';
 
-const Inventory: React.FC = () => {
+const Products: React.FC = () => {
+	const titlePage = getSubRouteTitle(SUB_ROUTES_NAMES.PRODUCTS);
 	return (
-		<Main title="Inventario">
-			<TitleSection title="Inventario">
+		<Main title={titlePage}>
+			<TitleSection title={titlePage}>
 				<Button variant="contained" startIcon={<ControlPointIcon />}>
 					Crear producto
 				</Button>
@@ -32,47 +35,13 @@ const Inventory: React.FC = () => {
 				</Button>
 			</TitleSection>
 			<Stack direction={{ xs: 'column', lg: 'row' }} spacing={{ xs: 2, lg: 10 }}>
-				<Card>
-					<CardContent>
-						<Stack alignItems="center" direction="row" spacing={5}>
-							<Avatar
-								sx={{
-									height: 55,
-									width: 55,
-								}}
-							>
-								<AllInboxIcon sx={{ height: 35, width: 35 }} />
-							</Avatar>
-							<Stack spacing={1}>
-								<Typography color="text.secondary" variant="overline">
-									Referencias totales
-								</Typography>
-								<Typography variant="h4">2</Typography>
-							</Stack>
-						</Stack>
-					</CardContent>
-				</Card>
-				<Card>
-					<CardContent>
-						<Stack alignItems="center" direction="row" spacing={5}>
-							<Avatar
-								sx={{
-									background: '#D7F4E8',
-									height: 55,
-									width: 55,
-								}}
-							>
-								<Icon name="dollar" height={35} width={35} />
-							</Avatar>
-							<Stack spacing={1}>
-								<Typography color="text.secondary" variant="overline">
-									Costo total del inventario
-								</Typography>
-								<Typography variant="h4">$200.000</Typography>
-							</Stack>
-						</Stack>
-					</CardContent>
-				</Card>
+				<CardInformation
+					icon={<AllInboxIcon sx={{ height: 35, width: 35 }} />}
+					name="Referencias totales"
+					value="200000"
+					background="#BDBDBD"
+				/>
+				<CardInformation icon="dollar" name="Costo total del inventario" value="10000" />
 			</Stack>
 			<Stack direction={{ lg: 'row', xs: 'column' }} justifyContent="space-between" spacing={{ xs: 2 }}>
 				<OutlinedInput
@@ -132,4 +101,4 @@ const Inventory: React.FC = () => {
 	);
 };
 
-export default Inventory;
+export default Products;
