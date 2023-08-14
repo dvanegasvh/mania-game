@@ -7,6 +7,7 @@ import { CardDescription } from '@/components/card-description';
 import { CardInformation } from '@/components/card-information';
 import { Main } from '@/components/main';
 import { TitleSection } from '@/components/title-section';
+import { CreateCategoryHoc } from '@/hoc/create-category/CreateCategoryHoc';
 import { SUB_ROUTES_NAMES } from '@/models/Routes';
 import { Scrollbar } from '@/styles/scrollbar/Scrollbar';
 import { getSubRouteTitle } from '@/utils/routes';
@@ -19,20 +20,22 @@ const Products: React.FC = () => {
 				<Button variant="contained" startIcon={<ControlPointIcon />}>
 					Crear producto
 				</Button>
-				<Button
-					variant="outlined"
-					startIcon={<ControlPointIcon />}
-					sx={{
-						borderWidth: 2.5,
-						borderColor: 'primary.main',
-						'&:hover': {
-							borderWidth: 2.5,
-							borderColor: 'primary.main',
-						},
-					}}
-				>
-					Crear categoría
-				</Button>
+				<CreateCategoryHoc
+					Button={props => (
+						<Button
+							{...props}
+							variant="outlined"
+							sx={{
+								borderWidth: 2.5,
+								borderColor: 'primary.main',
+								'&:hover': {
+									borderWidth: 2.5,
+									borderColor: 'primary.main',
+								},
+							}}
+						/>
+					)}
+				/>
 			</TitleSection>
 			<Stack direction={{ xs: 'column', lg: 'row' }} spacing={{ xs: 2, lg: 10 }}>
 				<CardInformation

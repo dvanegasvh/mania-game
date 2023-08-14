@@ -1,8 +1,6 @@
 import AllInboxIcon from '@mui/icons-material/AllInbox';
 import CategoryIcon from '@mui/icons-material/Category';
-import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
 import {
 	Box,
@@ -21,24 +19,21 @@ import { Main } from '@/components/main';
 import { ModalImportantInfo } from '@/components/modal';
 import { Table } from '@/components/table';
 import { TitleSection } from '@/components/title-section';
+import { CreateCategoryHoc } from '@/hoc/create-category/CreateCategoryHoc';
 import { SUB_ROUTES_NAMES } from '@/models/Routes';
 import { getSubRouteTitle } from '@/utils/routes';
-import { CreationModal } from './components/CreationModal';
 import { useCategories } from './hooks/useCategories';
 import { TABLE_HEADER } from './constants/TableCategories';
 
 export const Categories: React.FC = () => {
-	const { handleCreationModal, openCreationModal, handleOpenConfirmDelete, openConfirmDelete } = useCategories();
+	const { handleOpenConfirmDelete, openConfirmDelete } = useCategories();
 	const titlePage = getSubRouteTitle(SUB_ROUTES_NAMES.CATEGORIES);
 	return (
 		<Main title={titlePage}>
 			<TitleSection title={titlePage}>
-				<Button variant="contained" startIcon={<ControlPointIcon />} onClick={handleCreationModal}>
-					Nueva categoría
-				</Button>
+				<CreateCategoryHoc Button={props => <Button {...props} variant="contained" />} />
 			</TitleSection>
 			<Box>
-				<CreationModal open={openCreationModal} handleCLose={handleCreationModal} />
 				<ModalImportantInfo
 					open={openConfirmDelete}
 					handleCLose={handleOpenConfirmDelete}
@@ -99,16 +94,7 @@ export const Categories: React.FC = () => {
 							<TableCell>Prueba</TableCell>
 							<TableCell>Prueba</TableCell>
 							<TableCell sx={{ display: 'flex', gap: 1 }}>
-								<EditIcon
-									onClick={handleCreationModal}
-									sx={{
-										cursor: 'pointer',
-										color: 'neutral.500',
-										'&:hover': {
-											color: 'primary.main',
-										},
-									}}
-								/>
+								<CreateCategoryHoc edit />
 								<DeleteIcon
 									onClick={handleOpenConfirmDelete}
 									sx={{
@@ -126,15 +112,7 @@ export const Categories: React.FC = () => {
 							<TableCell>Prueba</TableCell>
 							<TableCell>Prueba</TableCell>
 							<TableCell sx={{ display: 'flex', gap: 1 }}>
-								<EditIcon
-									sx={{
-										cursor: 'pointer',
-										color: 'neutral.500',
-										'&:hover': {
-											color: 'primary.main',
-										},
-									}}
-								/>
+								<CreateCategoryHoc edit />
 								<DeleteIcon
 									sx={{
 										cursor: 'pointer',
@@ -151,15 +129,7 @@ export const Categories: React.FC = () => {
 							<TableCell>Prueba</TableCell>
 							<TableCell>Prueba</TableCell>
 							<TableCell sx={{ display: 'flex', gap: 1 }}>
-								<EditIcon
-									sx={{
-										cursor: 'pointer',
-										color: 'neutral.500',
-										'&:hover': {
-											color: 'primary.main',
-										},
-									}}
-								/>
+								<CreateCategoryHoc edit />
 								<DeleteIcon
 									sx={{
 										cursor: 'pointer',
