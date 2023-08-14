@@ -4,3 +4,8 @@ export interface IModalProps {
 	open: boolean;
 	handleCLose: () => void;
 }
+
+export interface IModalImportantInfoProps extends IModalProps {
+	actionBack: () => void;
+	actionConfirm: () => void;
+}

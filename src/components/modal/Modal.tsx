@@ -1,7 +1,8 @@
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import { Box } from '@mui/material';
+import BackIcon from '@mui/icons-material/KeyboardBackspace';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import ModalMaterial from '@mui/material/Modal';
-import { IModalProps } from './models/ModalProps';
+import { IModalImportantInfoProps, IModalProps } from './models/ModalProps';
 
 export const Modal: React.FC<IModalProps> = ({ children, title, handleCLose, open }) => {
 	return (
@@ -68,5 +69,42 @@ export const Modal: React.FC<IModalProps> = ({ children, title, handleCLose, ope
 				</Box>
 			</Box>
 		</ModalMaterial>
+	);
+};
+
+export const ModalImportantInfo: React.FC<IModalImportantInfoProps> = ({
+	actionBack,
+	actionConfirm,
+	children,
+	handleCLose,
+	open,
+}) => {
+	return (
+		<Modal open={open} handleCLose={handleCLose} title="Importante">
+			<Box sx={{ minWidth: { xs: '100%', lg: 500 }, textAlign: 'center', maxWidth: { xs: '100%', lg: 500 } }}>
+				{children}
+				<Stack sx={{ mt: 5 }} direction="row" justifyContent="center" spacing={4}>
+					<Button
+						variant="contained"
+						startIcon={<BackIcon />}
+						onClick={actionConfirm}
+						sx={{
+							backgroundColor: 'neutral.700',
+						}}
+					>
+						Volver
+					</Button>
+					<Button
+						variant="contained"
+						onClick={actionBack}
+						sx={{
+							backgroundColor: 'neutral.700',
+						}}
+					>
+						Confirmar
+					</Button>
+				</Stack>
+			</Box>
+		</Modal>
 	);
 };

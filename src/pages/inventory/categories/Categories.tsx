@@ -4,9 +4,21 @@ import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
-import { Box, Button, InputAdornment, MenuItem, OutlinedInput, Stack, TableCell, TableRow, TextField } from '@mui/material';
+import {
+	Box,
+	Button,
+	InputAdornment,
+	MenuItem,
+	OutlinedInput,
+	Stack,
+	TableCell,
+	TableRow,
+	TextField,
+	Typography,
+} from '@mui/material';
 import { CardInformation } from '@/components/card-information';
 import { Main } from '@/components/main';
+import { ModalImportantInfo } from '@/components/modal';
 import { Table } from '@/components/table';
 import { TitleSection } from '@/components/title-section';
 import { SUB_ROUTES_NAMES } from '@/models/Routes';
@@ -16,7 +28,7 @@ import { useCategories } from './hooks/useCategories';
 import { TABLE_HEADER } from './constants/TableCategories';
 
 export const Categories: React.FC = () => {
-	const { handleCreationModal, openCreationModal } = useCategories();
+	const { handleCreationModal, openCreationModal, handleOpenConfirmDelete, openConfirmDelete } = useCategories();
 	const titlePage = getSubRouteTitle(SUB_ROUTES_NAMES.CATEGORIES);
 	return (
 		<Main title={titlePage}>
@@ -27,6 +39,17 @@ export const Categories: React.FC = () => {
 			</TitleSection>
 			<Box>
 				<CreationModal open={openCreationModal} handleCLose={handleCreationModal} />
+				<ModalImportantInfo
+					open={openConfirmDelete}
+					handleCLose={handleOpenConfirmDelete}
+					actionBack={handleOpenConfirmDelete}
+					actionConfirm={handleOpenConfirmDelete}
+				>
+					<Typography>Estas seguro de que deseas eliminar esta categoría.</Typography>
+					<Typography sx={{ mt: 1 }}>
+						Recuerde que que los productos asociados a esta categoría se quedaran sin ella.
+					</Typography>
+				</ModalImportantInfo>
 				<Stack direction={{ xs: 'column', lg: 'row' }} spacing={{ xs: 2, lg: 10 }}>
 					<CardInformation
 						icon={<CategoryIcon sx={{ height: 35, width: 35, color: '#2DA674' }} />}
@@ -77,6 +100,7 @@ export const Categories: React.FC = () => {
 							<TableCell>Prueba</TableCell>
 							<TableCell sx={{ display: 'flex', gap: 1 }}>
 								<EditIcon
+									onClick={handleCreationModal}
 									sx={{
 										cursor: 'pointer',
 										color: 'neutral.500',
@@ -86,6 +110,7 @@ export const Categories: React.FC = () => {
 									}}
 								/>
 								<DeleteIcon
+									onClick={handleOpenConfirmDelete}
 									sx={{
 										cursor: 'pointer',
 										color: 'neutral.500',
