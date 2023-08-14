@@ -11,18 +11,22 @@ import { Table } from '@/components/table';
 import { TitleSection } from '@/components/title-section';
 import { SUB_ROUTES_NAMES } from '@/models/Routes';
 import { getSubRouteTitle } from '@/utils/routes';
+import { CreationModal } from './components/CreationModal';
+import { useCategories } from './hooks/useCategories';
 import { TABLE_HEADER } from './constants/TableCategories';
 
 export const Categories: React.FC = () => {
+	const { handleCreationModal, openCreationModal } = useCategories();
 	const titlePage = getSubRouteTitle(SUB_ROUTES_NAMES.CATEGORIES);
 	return (
 		<Main title={titlePage}>
 			<TitleSection title={titlePage}>
-				<Button variant="contained" startIcon={<ControlPointIcon />}>
+				<Button variant="contained" startIcon={<ControlPointIcon />} onClick={handleCreationModal}>
 					Nueva categoría
 				</Button>
 			</TitleSection>
 			<Box>
+				<CreationModal open={openCreationModal} handleCLose={handleCreationModal} />
 				<Stack direction={{ xs: 'column', lg: 'row' }} spacing={{ xs: 2, lg: 10 }}>
 					<CardInformation
 						icon={<CategoryIcon sx={{ height: 35, width: 35, color: '#2DA674' }} />}
