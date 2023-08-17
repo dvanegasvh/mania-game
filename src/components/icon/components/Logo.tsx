@@ -1,6 +1,6 @@
 import { useTheme } from '@mui/material/styles';
 
-export const Logo = () => {
+export const Logo = (): JSX.Element => {
 	const theme = useTheme();
 	const fillColor = theme.palette.primary.main;
 

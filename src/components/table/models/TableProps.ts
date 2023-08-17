@@ -1,14 +1,14 @@
-import { ReactNode } from 'react';
-import { SxProps } from '@mui/material';
+import { type ReactNode } from 'react';
+import { type SxProps } from '@mui/material';
 
-export type MainTableProps = {
+export interface IMainTableProps {
 	title: string;
 	sx?: SxProps;
 	rowSpan?: number;
 	colSpan?: number;
-};
+}
 
 export interface ITableProps {
-	headers: MainTableProps[];
+	headers: IMainTableProps[];
 	children: ReactNode[] | ReactNode;
 }

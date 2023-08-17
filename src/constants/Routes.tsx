@@ -3,7 +3,36 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 import OutboundIcon from '@mui/icons-material/Outbound';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import { ICONS_SIZE } from '@/constants/IconsSize';
-import { IRoutes, ROUTE_NAMES, SUB_ROUTES } from '@/models/Routes';
+import { type IRoutes, ROUTE_NAMES, SUB_ROUTES_NAMES } from '@/models/Routes';
+
+export const SUB_ROUTES: IRoutes = {
+	[SUB_ROUTES_NAMES.BILLS_CREATE]: {
+		path: '/bill/create',
+		title: 'Crear venta',
+	},
+
+	[SUB_ROUTES_NAMES.BILLS_REPORT]: {
+		path: '/bill/report',
+		title: 'Reporte de venta',
+	},
+	[SUB_ROUTES_NAMES.INCOME_CREATE]: {
+		path: '/income/create',
+		title: 'Crear egreso',
+	},
+
+	[SUB_ROUTES_NAMES.INCOME_REPORT]: {
+		path: '/income/report',
+		title: 'Reporte de egreso',
+	},
+	[SUB_ROUTES_NAMES.CATEGORIES]: {
+		path: '/inventory/categories',
+		title: 'Categorías',
+	},
+	[SUB_ROUTES_NAMES.PRODUCTS]: {
+		path: '/inventory/products',
+		title: 'Productos',
+	},
+};
 
 /**
  * This const is used to define the routes of the application.
@@ -15,6 +44,7 @@ export const ROUTES: IRoutes = {
 		inNav: true,
 		icon: <ReceiptIcon fontSize="small" sx={ICONS_SIZE} />,
 	},
+
 	[ROUTE_NAMES.INVENTORY]: {
 		path: '#',
 		title: 'Inventario',
@@ -23,16 +53,12 @@ export const ROUTES: IRoutes = {
 		isCollapse: true,
 		subItems: [
 			{
-				path: '/inventory/items',
-				title: 'Items de venta',
+				path: SUB_ROUTES[SUB_ROUTES_NAMES.PRODUCTS].path,
+				title: SUB_ROUTES[SUB_ROUTES_NAMES.PRODUCTS].title,
 			},
 			{
-				path: '/inventory-value',
-				title: 'Valor del inventario',
-			},
-			{
-				path: '/categories',
-				title: 'Categorías',
+				path: SUB_ROUTES[SUB_ROUTES_NAMES.CATEGORIES].path,
+				title: SUB_ROUTES[SUB_ROUTES_NAMES.CATEGORIES].title,
 			},
 		],
 	},
@@ -44,12 +70,12 @@ export const ROUTES: IRoutes = {
 		isCollapse: true,
 		subItems: [
 			{
-				path: SUB_ROUTES['INCOME_CREATE'],
-				title: 'Crear venta',
+				path: SUB_ROUTES[SUB_ROUTES_NAMES.BILLS_CREATE].path,
+				title: SUB_ROUTES[SUB_ROUTES_NAMES.BILLS_CREATE].title,
 			},
 			{
-				path: SUB_ROUTES['INCOME_REPORT'],
-				title: 'Reporte de ingresos',
+				path: SUB_ROUTES[SUB_ROUTES_NAMES.BILLS_REPORT].path,
+				title: SUB_ROUTES[SUB_ROUTES_NAMES.BILLS_REPORT].title,
 			},
 		],
 	},
@@ -61,12 +87,12 @@ export const ROUTES: IRoutes = {
 		isCollapse: true,
 		subItems: [
 			{
-				path: SUB_ROUTES['BILLS_CREATE'],
-				title: 'Crear gasto',
+				path: SUB_ROUTES[SUB_ROUTES_NAMES.INCOME_CREATE].path,
+				title: SUB_ROUTES[SUB_ROUTES_NAMES.INCOME_CREATE].title,
 			},
 			{
-				path: SUB_ROUTES['BILLS_REPORT'],
-				title: 'Reporte de gastos',
+				path: SUB_ROUTES[SUB_ROUTES_NAMES.INCOME_REPORT].path,
+				title: SUB_ROUTES[SUB_ROUTES_NAMES.INCOME_REPORT].title,
 			},
 		],
 	},

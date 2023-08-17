@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { type Dispatch, type SetStateAction, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { map } from 'lodash';
 import { ROUTES } from '@/constants/Routes';
-import { IRoute } from '@/models/Routes';
+import { type IRoute } from '@/models/Routes';
 
 export const useSidebar = (): {
 	navItems: IRoute[];
@@ -25,8 +25,7 @@ export const useSidebar = (): {
 			console.log('first');
 			console.log(subRoute?.some(subRoute => subRoute.path === pathname));
 		}
-		// console.log(pathname);
-		return subRoute?.some(subRoute => subRoute.path === pathname) || false;
+		return subRoute?.some(subRoute => subRoute.path === pathname) ?? false;
 	};
 
 	return {

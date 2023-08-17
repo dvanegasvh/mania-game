@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { Box, ListItemButton } from '@mui/material';
-import { IItemProps } from '../models/ItemProps';
+import { type IItemProps } from '../models/ItemProps';
 
 export const Item: React.FC<IItemProps> = ({
 	active = false,
@@ -38,8 +38,8 @@ export const Item: React.FC<IItemProps> = ({
 				...sxMain,
 			}}
 			onClick={(): void => {
-				onClick && onClick();
-				path !== '#' && router.push(path);
+				onClick?.();
+				void (path !== '#' && router.push(path));
 			}}
 		>
 			<Box

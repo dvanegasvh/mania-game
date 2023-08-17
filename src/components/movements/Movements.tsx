@@ -1,6 +1,7 @@
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import { Box, Button, TableCell, TableRow } from '@mui/material';
+import { CardInformation } from '@/components/card-information';
 import { Main } from '@/components/main';
 import { Table } from '@/components/table';
 import { Tabs } from '@/components/tabs';
@@ -8,7 +9,6 @@ import { TitleSection } from '@/components/title-section';
 import { useRedirect } from '@/hooks/useRedirect';
 import { ROUTE_NAMES, SUB_ROUTES } from '@/models/Routes';
 import { getTitleRoute } from '@/utils/routes';
-import { CardInformation } from './components/card-information';
 import { TABLE_HEADER } from './constants/TableMovements';
 
 const Movements: React.FC = () => {

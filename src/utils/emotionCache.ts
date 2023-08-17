@@ -1,4 +1,4 @@
-import { EmotionCache } from '@emotion/react';
+import type { EmotionCache } from '@emotion/react';
 import createCache from '@emotion/cache';
 
 export const createEmotionCache = (): EmotionCache => {

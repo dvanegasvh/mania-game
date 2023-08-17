@@ -1,51 +1,35 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
-  "plugins": ["react", "simple-import-sort", "@typescript-eslint"],
-  "parserOptions": {
-    "sourceType": "module"
-  },
-  "env": { "es6": true },
-  "rules": {
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["warn"]
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "next/core-web-vitals",
+        "standard-with-typescript",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "react"
+    ],
 
-  },
-  "overrides": [
-    {
-      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
-      "rules": {
-        "simple-import-sort/imports": [
-          "error",
-          {
-            "groups": [
-              [
-                "^react", 
-                "^next",
-                "^@?\\w",
-                "^(@|components)(/.*|$)",
-                "^(./components)(/.*|$)",
-                "^(../components)(/.*|$)",
-                "^(../../components)(/.*|$)",
-                "^(@|models)(/.*|$)",
-                "^(./models)(/.*|$)",
-                "^(../models)(/.*|$)",
-                "^(../../models)(/.*|$)",
-                "^(@|hooks)(/.*|$)",
-                "^(./hooks)(/.*|$)",
-                "^(../hooks)(/.*|$)",
-                "^(../../hooks)(/.*|$)",
-                "^(@|constants)(/.*|$)",
-                "^(./constants)(/.*|$)",
-                "^(../constants)(/.*|$)",
-                "^(../../constants)(/.*|$)"
-              ]
-            ]
-          }
-        ]
-
-      }
+    "rules": {
+      "multiline-ternary": "off",
+      "@typescript-eslint/member-delimiter-style": "off",
+      "no-tabs": "off",
+      "react/prop-types": "off", 
+      "react/react-in-jsx-scope": "off",
+      "semi": "off",
+      "indent": "off",
+      "@typescript-eslint/semi": "off",
+      "@typescript-eslint/indent": "off",
+      "comma-dangle": "off",
+      "@typescript-eslint/comma-dangle": "off",
+      "@typescript-eslint/strict-boolean-expressions": "off"
     }
-  ]
 }

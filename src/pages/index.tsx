@@ -1,5 +1,7 @@
 import Movements from '@/components/movements/Movements';
 
-export default function Home() {
+export const Home: React.FC = () => {
 	return <Movements />;
-}
+};
+
+export default Home;

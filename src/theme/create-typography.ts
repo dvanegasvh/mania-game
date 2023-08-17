@@ -1,4 +1,5 @@
-export const createTypography = (): { [key: string]: Object } => {
+/* eslint-disable @typescript-eslint/ban-types */
+export const createTypography = (): Record<string, Object> => {
 	return {
 		fontFamily:
 			'"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',

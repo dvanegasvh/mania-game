@@ -1,6 +1,6 @@
-import { Drawer, Theme, useMediaQuery } from '@mui/material';
+import { Drawer, type Theme, useMediaQuery } from '@mui/material';
 import { Content } from './components/content';
-import { ISidebarProps } from './models/SidebarProps';
+import { type ISidebarProps } from './models/SidebarProps';
 
 export const Sidebar: React.FC<ISidebarProps> = ({ onNavOpen, openMenu }) => {
 	const lgUp = useMediaQuery((theme: Theme) => theme.breakpoints.up('lg'));

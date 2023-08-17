@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import { Box, Collapse, Divider, List, Typography } from '@mui/material';
 import { Icon } from '@/components/icon';
 import { Item } from '@/components/sidebar/components/item/Item';
-import { IContentProps } from '../models/ContentProps';
+import { type IContentProps } from '../models/ContentProps';
 import { useCollapse } from '../../hooks/useCollapse';
 import { useSidebar } from '../../hooks/useSidebar';
 

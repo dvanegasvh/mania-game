@@ -4,10 +4,10 @@ export const useCollapse = (currentActive?: boolean): { toggleCollapse: () => vo
 	const [collapse, setCollapse] = useState<boolean>(false);
 
 	useEffect(() => {
-		setCollapse(currentActive || false);
+		setCollapse(currentActive ?? false);
 	}, [currentActive]);
 
-	const toggleCollapse = () => {
+	const toggleCollapse = (): void => {
 		setCollapse(!collapse);
 	};
 

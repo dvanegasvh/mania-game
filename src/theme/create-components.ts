@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import {
-	Components,
+	type Components,
 	createTheme,
 	filledInputClasses,
 	inputLabelClasses,
@@ -10,7 +11,7 @@ import {
 
 const muiTheme = createTheme();
 
-export const createComponents = (config: any): Components => {
+export const createComponents = (config: Record<string, any>): Components => {
 	const { palette } = config;
 
 	return {
@@ -141,12 +142,14 @@ export const createComponents = (config: any): Components => {
 					fontSize: 14,
 					fontWeight: 500,
 					lineHeight: '24px',
+					background: 'black',
 					'&::placeholder': {
 						color: palette.text.secondary,
 					},
 				},
 			},
 		},
+
 		MuiFilledInput: {
 			styleOverrides: {
 				root: {
@@ -200,6 +203,7 @@ export const createComponents = (config: any): Components => {
 						[`& .${outlinedInputClasses.notchedOutline}`]: {
 							borderColor: palette.primary.main,
 							boxShadow: `${palette.primary.main} 0 0 0 2px`,
+							borderWidth: 1,
 						},
 					},
 					[`&.${filledInputClasses.error}`]: {

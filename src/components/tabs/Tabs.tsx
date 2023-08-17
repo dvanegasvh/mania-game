@@ -1,12 +1,12 @@
 import { Children, useState } from 'react';
 import { Box, Tab, Tabs as MuiTabs } from '@mui/material';
-import { ITabsProps } from './models/TabsProps';
+import { type ITabsProps } from './models/TabsProps';
 
 export const Tabs: React.FC<ITabsProps> = ({ titleTabs = [], children }) => {
 	const [currentTab, setCurrentTab] = useState<number>(0);
 	const tabsContent = Children.toArray(children);
 
-	const handleChange = (_: React.SyntheticEvent, newValue: number) => {
+	const handleChange = (_: React.SyntheticEvent, newValue: number): void => {
 		setCurrentTab(newValue);
 	};
 
