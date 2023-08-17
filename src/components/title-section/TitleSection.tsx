@@ -1,5 +1,5 @@
 import { Stack, Typography } from '@mui/material';
-import { ITitleSectionProps } from './models/TitleSection';
+import { type ITitleSectionProps } from './models/TitleSection';
 
 export const TitleSection: React.FC<ITitleSectionProps> = ({ children, title }) => {
 	return (

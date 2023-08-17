@@ -1,5 +1,5 @@
 import { ROUTES, SUB_ROUTES } from '@/constants/Routes';
-import { ROUTE_NAMES, SUB_ROUTES_NAMES } from '@/models/Routes';
+import type { ROUTE_NAMES, SUB_ROUTES_NAMES } from '@/models/Routes';
 
 /**
  * Util to get route title

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 export const useRedirect = (): { redirect: (route: string) => void } => {
 	const router = useRouter();
 	const redirect = (path: string): void => {
-		router.push(path);
+		void router.push(path);
 	};
 
 	return {

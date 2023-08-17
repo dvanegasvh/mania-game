@@ -3,7 +3,7 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 import OutboundIcon from '@mui/icons-material/Outbound';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import { ICONS_SIZE } from '@/constants/IconsSize';
-import { IRoutes, ROUTE_NAMES, SUB_ROUTES_NAMES } from '@/models/Routes';
+import { type IRoutes, ROUTE_NAMES, SUB_ROUTES_NAMES } from '@/models/Routes';
 
 export const SUB_ROUTES: IRoutes = {
 	[SUB_ROUTES_NAMES.BILLS_CREATE]: {

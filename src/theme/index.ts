@@ -1,5 +1,4 @@
-import { createTheme as createMuiTheme, ThemeOptions } from '@mui/material';
-
+import { createTheme as createMuiTheme, type ThemeOptions } from '@mui/material';
 import { createComponents } from './create-components';
 import { createPalette } from './create-palette';
 import { createShadows } from './create-shadows';

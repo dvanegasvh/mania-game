@@ -57,7 +57,7 @@ const Products: React.FC = () => {
 					}
 				/>
 				<Stack direction={'row'} sx={{ width: { lg: 500, xs: '100%' } }} spacing={2}>
-					<TextField sx={{ width: '100%' }} label="Categoría" select onChange={e => console.log(e.target.value)}>
+					<TextField sx={{ width: '100%' }} label="Categoría" select onChange={e => { console.log(e.target.value); }}>
 						<MenuItem value={1} sx={{ backgroundColor: 'transparent !important' }}>
 							Prueba
 						</MenuItem>
@@ -66,7 +66,7 @@ const Products: React.FC = () => {
 						</MenuItem>
 						<MenuItem sx={{ backgroundColor: 'transparent !important' }}>Prueba</MenuItem>
 					</TextField>
-					<TextField sx={{ width: '100%' }} label="Ordenar por" select onChange={e => console.log(e.target.value)}>
+					<TextField sx={{ width: '100%' }} label="Ordenar por" select onChange={e => { console.log(e.target.value); }}>
 						<MenuItem value={1} sx={{ backgroundColor: 'transparent !important' }}>
 							Prueba
 						</MenuItem>

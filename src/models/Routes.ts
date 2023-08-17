@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 /**
  * This enum is used to define the names of the routes of the application.
@@ -57,6 +56,4 @@ export interface IRoute {
 /**
  * This interface is used to define the routes of the application.
  */
-export interface IRoutes {
-	[key: string]: IRoute;
-}
+export type IRoutes = Record<string, IRoute>;

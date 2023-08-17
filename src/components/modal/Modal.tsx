@@ -1,8 +1,8 @@
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import BackIcon from '@mui/icons-material/KeyboardBackspace';
-import { Box, Button, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack } from '@mui/material';
 import ModalMaterial from '@mui/material/Modal';
-import { IModalImportantInfoProps, IModalProps } from './models/ModalProps';
+import { type IModalImportantInfoProps, type IModalProps } from './models/ModalProps';
 
 export const Modal: React.FC<IModalProps> = ({ children, title, handleCLose, open }) => {
 	return (

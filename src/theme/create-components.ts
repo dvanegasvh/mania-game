@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import {
-	Components,
+	type Components,
 	createTheme,
 	filledInputClasses,
 	inputLabelClasses,
@@ -10,7 +11,7 @@ import {
 
 const muiTheme = createTheme();
 
-export const createComponents = (config: any): Components => {
+export const createComponents = (config: Record<string, any>): Components => {
 	const { palette } = config;
 
 	return {

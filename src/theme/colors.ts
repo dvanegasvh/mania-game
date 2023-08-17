@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import { alpha } from '@mui/material/styles';
 
-const withAlphas = (color: { [key: string]: string }): Object => {
+const withAlphas = (color: Record<string, string>): Object => {
 	return {
 		...color,
 		alpha4: alpha(color.main, 0.04),

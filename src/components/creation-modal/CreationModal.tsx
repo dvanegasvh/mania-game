@@ -1,6 +1,6 @@
 import { Box, Button, TextField } from '@mui/material';
 import { Modal } from '@/components/modal';
-import { ICreationModalProps } from './models/CreationModal';
+import { type ICreationModalProps } from './models/CreationModal';
 
 export const CreationModal: React.FC<ICreationModalProps> = ({ open, handleCLose, data, edit, title }) => {
 	return (

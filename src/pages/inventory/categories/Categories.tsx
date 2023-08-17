@@ -22,8 +22,8 @@ import { TitleSection } from '@/components/title-section';
 import { CreateCategoryHoc } from '@/hoc/create-category/CreateCategoryHoc';
 import { SUB_ROUTES_NAMES } from '@/models/Routes';
 import { getSubRouteTitle } from '@/utils/routes';
-import { useCategories } from './hooks/useCategories';
-import { TABLE_HEADER } from './constants/TableCategories';
+import { useCategories } from '../../../hooks/useCategories';
+import { TABLE_HEADER } from '@/constants/TableCategories';
 
 export const Categories: React.FC = () => {
 	const { handleOpenConfirmDelete, openConfirmDelete } = useCategories();
@@ -78,7 +78,9 @@ export const Categories: React.FC = () => {
 							sx={{ width: { lg: 400, xs: '100%' } }}
 							label="Ordenar por"
 							select
-							onChange={e => console.log(e.target.value)}
+							onChange={e => {
+								console.log(e.target.value);
+							}}
 						>
 							<MenuItem value={1} sx={{ backgroundColor: 'transparent !important' }}>
 								Prueba

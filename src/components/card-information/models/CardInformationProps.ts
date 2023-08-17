@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
-import { SxProps } from '@mui/material';
-import { IconName } from '@/components/icon/models/IconTypeNames';
+import { type ReactNode } from 'react';
+import { type SxProps } from '@mui/material';
+import { type IconName } from '@/components/icon/models/IconTypeNames';
 
 export interface ICardInformationProps {
 	sx?: SxProps;

@@ -1,5 +1,5 @@
-import { ReactElement } from 'react';
-import { SxProps } from '@mui/material';
+import { type ReactElement } from 'react';
+import { type SxProps } from '@mui/material';
 
 export interface IItemProps {
 	active?: boolean;

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Box, Container } from '@mui/material';
-import { IMainProps } from './models/IMainProps';
+import { type IMainProps } from './models/IMainProps';
 
 export const Main: React.FC<IMainProps> = ({ children, title = 'test' }) => {
 	return (

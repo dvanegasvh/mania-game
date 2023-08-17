@@ -1,6 +1,6 @@
 import { Box, Card, Table as MuiTable, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import { Scrollbar } from '@/styles/scrollbar/Scrollbar';
-import { ITableProps } from './models/TableProps';
+import { type ITableProps } from './models/TableProps';
 
 export const Table: React.FC<ITableProps> = ({ headers = [], children }) => {
 	return (

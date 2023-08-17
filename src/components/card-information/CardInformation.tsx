@@ -1,8 +1,7 @@
 import { Avatar, Card, CardContent, Stack, Typography } from '@mui/material';
 import { Icon } from '@/components/icon';
-import { ICardInformationProps } from './models/CardInformationProps';
-
-import { IconName } from '../icon/models/IconTypeNames';
+import { type ICardInformationProps } from './models/CardInformationProps';
+import { type IconName } from '../icon/models/IconTypeNames';
 
 export const CardInformation: React.FC<ICardInformationProps> = ({ icon, sx, name, value, background = '#D7F4E8' }) => {
 	return (
