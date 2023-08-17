@@ -40,9 +40,9 @@ export const Categories: React.FC = () => {
 					actionBack={handleOpenConfirmDelete}
 					actionConfirm={handleOpenConfirmDelete}
 				>
-					<Typography>Estas seguro de que deseas eliminar esta categoría.</Typography>
+					<Typography>Estas seguro de que deseas eliminar esta acción.</Typography>
 					<Typography sx={{ mt: 1 }}>
-						Recuerde que que los productos asociados a esta categoría se quedaran sin ella.
+						Recuerda que que los productos asociados pasaran a no tener una categoría.
 					</Typography>
 				</ModalImportantInfo>
 				<Stack direction={{ xs: 'column', lg: 'row' }} spacing={{ xs: 2, lg: 10 }}>

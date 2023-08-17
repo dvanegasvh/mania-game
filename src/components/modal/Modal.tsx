@@ -84,23 +84,10 @@ export const ModalImportantInfo: React.FC<IModalImportantInfoProps> = ({
 			<Box sx={{ minWidth: { xs: '100%', lg: 500 }, textAlign: 'center', maxWidth: { xs: '100%', lg: 500 } }}>
 				{children}
 				<Stack sx={{ mt: 5 }} direction="row" justifyContent="center" spacing={4}>
-					<Button
-						variant="contained"
-						startIcon={<BackIcon />}
-						onClick={actionConfirm}
-						sx={{
-							backgroundColor: 'neutral.700',
-						}}
-					>
+					<Button variant="outlined" startIcon={<BackIcon />} onClick={actionConfirm}>
 						Volver
 					</Button>
-					<Button
-						variant="contained"
-						onClick={actionBack}
-						sx={{
-							backgroundColor: 'neutral.700',
-						}}
-					>
+					<Button variant="contained" onClick={actionBack}>
 						Confirmar
 					</Button>
 				</Stack>
